@@ -1,0 +1,8 @@
+releases:
+  1.0.0:
+    changes:
+      major_changes:
+      - Added module license_info
+      - Release 1.0.0
+      release_summary: Initial release 1.0.0
+    release_date: '2025-02-01'

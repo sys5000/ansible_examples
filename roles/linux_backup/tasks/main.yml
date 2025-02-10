@@ -1,0 +1,16 @@
+---
+#file in rules/tasks/main.yml
+
+- name: "System hostname"
+  command: hostname 
+  register: result
+
+- name: Fetch stuff from the remote and save to local
+  synchronize: "src={{ item }} dest={{ linux_destination_directory }} mode=pull"
+  with_items:
+    - "{{ dir_to_backup }}"
+  register: result
+
+- debug: var=result
+- debug: var=result2
+- shell: echo 'Linux backup is completed.'

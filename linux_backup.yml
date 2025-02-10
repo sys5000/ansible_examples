@@ -1,0 +1,21 @@
+# File: linux_backup.yml
+---
+- name: "Role Backup System Linux"
+  hosts: linux 
+  ignore_errors: True
+ 
+  vars:
+    favcolor: blue
+    linux_destination_directory: "files/"
+    dir_to_backup:
+      - "/etc"
+      - "/var/www"
+      - "/var/named"
+      - "/home/prod"
+      - "/var/log"
+
+
+  tasks:
+    - include_role: linux_backup
+        
+
